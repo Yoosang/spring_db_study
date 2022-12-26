@@ -42,7 +42,7 @@ public class ConnectionTest {
         useDataSource(dataSource);
         Thread.sleep(1000); //커넥션 풀에서 커넥션 생성 시간 대기
     }
-    
+
     private void useDataSource(DataSource dataSource) throws SQLException {
         Connection con1 = dataSource.getConnection();
         Connection con2 = dataSource.getConnection();
