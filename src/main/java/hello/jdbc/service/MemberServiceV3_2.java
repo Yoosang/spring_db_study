@@ -37,17 +37,6 @@ public class MemberServiceV3_2 {
         });
     }
 
-    private void release(Connection con) {
-        if(con != null){
-            try{
-                con.setAutoCommit(true); //커넥션풀 고
-                con.close();
-            }catch (Exception e){
-                log.info("error", e);
-            }
-        }
-    }
-
     private void bizLogic(String fromId, String toId, int money) throws SQLException {
         Member fromMember = memberRepository.findById(fromId);
         Member toMember = memberRepository.findById(toId);
